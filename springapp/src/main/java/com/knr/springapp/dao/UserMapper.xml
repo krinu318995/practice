@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mabatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.knr.springapp.dao.IUserRepository">
+	<resultMap type="com.knr.springapp.vo.UserVO" id="user">
+		<result property="userId" column="user_id" />
+		<result property="password" column="password" />
+		<result property="name" column="name" />
+		<result property="tel" column="tel" />
+		<result property="picture" column="picture" />
+		<result property="pictureSize" column="picture_size" />
+	</resultMap>
+	<insert id="userInsert"
+		parameterType="com.knr.springapp.vo.UserVO">
+			insert into emp_users values
+			(#{userId},#{password},#{name},#{tel},#{picture},#{pictureSize})
+<!-- 		<if test="file != null">
+			insert into emp_users values
+			(#{userId},#{password},#{name},#{tel},#{picture},#{pictureSize})
+		</if>
+		<if test="file == null">
+			insert into emp_users values
+			(#{userId},#{password},#{name},#{tel},null, null)
+		</if> -->
+	</insert>
+	<select id="getPassword" parameterType="String"
+		resultType="String">
+		select password from emp_users where
+		userId=#{userId}
+	</select>
+	<!-- <select id="getUserInfo" parameterType="String" resultType="com.knr.springapp.vo.UserVo"> 
+		select user_id as userId, password, name, tel, picture, piture_size as pictureSize 
+		from emp_users where user_id = #{userId} </select> -->
+</mapper>
