@@ -59,7 +59,7 @@ public class UserService implements IUserService {
 	}
 
 	@Override
-	public String userIdCheck(String userId) {
+	public int userIdCheck(String userId) {
 		// TODO Auto-generated method stub
 		return userRepository.userIdCheck(userId);
 	}

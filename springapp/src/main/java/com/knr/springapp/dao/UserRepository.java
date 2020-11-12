@@ -46,9 +46,9 @@ public class UserRepository implements IUserRepository{
 	}
 
 	@Override
-	public String userIdCheck(String userId) {
+	public int userIdCheck(String userId) {
 		// TODO Auto-generated method stub
-		return null;
+		return 0;
 	}
 
 	/*

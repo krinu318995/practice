@@ -64,7 +64,7 @@ public class UserController {
 	@PostMapping(value = "/idcheck")
 	@ResponseBody
 	public String userIdCheck(String userId) {
-		return userService.userIdCheck(userId) == null ? "true" : null ;
+		return userService.userIdCheck(userId) == 0 ? "true" : null ;
 		
 	}
 

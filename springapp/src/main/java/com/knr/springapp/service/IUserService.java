@@ -18,6 +18,6 @@ public interface IUserService {
 
 	public String getPassword(String userid);
 
-	public String userIdCheck(String userId);
+	public int userIdCheck(String userId);
 	
 }

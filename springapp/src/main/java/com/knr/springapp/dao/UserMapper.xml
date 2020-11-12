@@ -28,6 +28,10 @@
 		select password from emp_users where
 		userId=#{userId}
 	</select>
+	
+	<select id="idCheck" parameterType="String" resultType="int">
+	select count(*) form emp_users where userid = #{userId}
+	</select>
 	<!-- <select id="getUserInfo" parameterType="String" resultType="com.knr.springapp.vo.UserVo"> 
 		select user_id as userId, password, name, tel, picture, piture_size as pictureSize 
 		from emp_users where user_id = #{userId} </select> -->
